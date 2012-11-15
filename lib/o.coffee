@@ -1,3 +1,10 @@
+# ø is a library that eases functional programming in JavaScript and
+# CoffeeScript. It contains common generic functions such as `id`,
+# `map` and `foldl`. All functions in ø are pure functions.
+#
+# At the moment, ø only supports using it with Node.js. Contributions
+# are more than welcome!
+
 ø =
 
 #### Identity functions

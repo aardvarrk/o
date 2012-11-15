@@ -37,7 +37,9 @@
     sum: (xs) -> ø.foldl1(ø.add, xs)
     product: (xs) -> ø.foldl1(ø.multiply, xs)
     reverse: (xs) -> ø.foldl(ø.flip(ø.unshift), [], xs)
-    concat: (xss) -> ø.foldr(((xs, ys) -> ø.list(xs..., ys...)), [], xss)
+    glue: (xs, ys) -> ø.list(xs..., ys...)
+    concat: (xss) -> ø.foldr(ø.glue, [], xss)
+    concatMap: (f, xs) -> ø.foldr(ø.comp(ø.glue, f), [], xs)
 
     map: (f, xs) -> f(x) for x in xs
     filter: (f, xs) -> x for x in xs when f(x)

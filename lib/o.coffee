@@ -18,10 +18,8 @@
 
     foldl: (f, z0, xs0) ->
         lgo = (z, xs) ->
-            if ø.null(xs)
-                z
-            else
-                lgo(f(z, ø.head(xs)), ø.tail(xs))
+            if ø.null(xs) then z
+            else lgo(f(z, ø.head(xs)), ø.tail(xs))
         lgo(z0, xs0)
     foldl1: (f, xs) -> ø.foldl(f, ø.head(xs), ø.tail(xs))
     foldr: (f, z, xs) ->

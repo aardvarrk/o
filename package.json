@@ -1,4 +1,8 @@
 {
     "name": "ø",
+    "main": "main.js",
+    "dependencies": {
+        "coffee-script": "1.4.x"
+    },
     "version": "0.0.1"
 }

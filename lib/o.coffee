@@ -24,10 +24,8 @@
     foldl1: (f, xs) -> ø.foldl(f, ø.head(xs), ø.tail(xs))
     foldr: (f, z, xs) ->
         go = (ys) ->
-            if ys.length is 0
-                z
-            else
-                f(ø.head(ys), go(ø.tail(ys)))
+            if ys.length is 0 then z
+            else f(ø.head(ys), go(ø.tail(ys)))
         go(xs)
     foldr1: (f, xs) ->
         if xs.length is 1

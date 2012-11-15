@@ -1,5 +1,5 @@
 {
-    "name": "ø",
+    "name": "o-lib",
     "main": "main.js",
     "dependencies": {
         "coffee-script": "1.4.x"

@@ -1,14 +1,13 @@
 ø =
     id: (x) -> x
+    list: (xs...) -> xs
 
     flip: (f) -> (x, y) -> f(y, x)
     curry: (f, args...) -> (args_...) -> f(args..., args_...)
     apply: (f, args...) -> f(args...)
     comp: (f, g) -> (args...) -> f(g(args...))
 
-    unshift: (x, xs) ->
-        # Very verbose because JavaScript's Array constructor is moronic
-        if xs.length is 0 then [x] else new Array(x, xs...)
+    unshift: (x, xs) -> ø.list(x, xs...)
     head: (xs) -> xs[0]
     tail: (xs) -> xs[1..]
     last: (xs) -> xs[xs.length - 1]
@@ -23,9 +22,22 @@
                 lgo(f(z, ø.head(xs)), ø.tail(xs))
         lgo(z0, xs0)
     foldl1: (f, xs) -> ø.foldl(f, ø.head(xs), ø.tail(xs))
+    foldr: (f, z, xs) ->
+        go = (ys) ->
+            if ys.length is 0
+                z
+            else
+                f(ø.head(ys), go(ø.tail(ys)))
+        go(xs)
+    foldr1: (f, xs) ->
+        if xs.length is 1
+            ø.head(xs)
+        else
+            f(ø.head(xs), foldr1(f, ø.tail(xs)))
     sum: (xs) -> ø.foldl1(ø.add, xs)
     product: (xs) -> ø.foldl1(ø.multiply, xs)
     reverse: (xs) -> ø.foldl(ø.flip(ø.unshift), [], xs)
+    concat: (xss) -> ø.foldr(((xs, ys) -> ø.list(xs..., ys...)), [], xss)
 
     map: (f, xs) -> f(x) for x in xs
     filter: (f, xs) -> x for x in xs when f(x)

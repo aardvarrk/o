@@ -1,0 +1,21 @@
+# Emacs crap
+*~
+\#*#
+
+# docco crap
+docs
+
+# Node.js crap
+node_modules
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+npm-debug.log

@@ -13,7 +13,7 @@
     last: (xs) -> xs[xs.length - 1]
     init: (xs) -> xs[..xs.length - 2]
     null: (xs) -> xs.length is 0
-    elem: (x, xs) -> ø.any(ø.curry(ø.equal, x), xs)
+    elem: (x, xs) -> ø.any(ø.curry(ø.eq, x), xs)
     length: (xs) -> xs.length
 
     foldl: (f, z0, xs0) ->
@@ -64,6 +64,12 @@
     divide: (a, b) -> a / b
     mod: (a, b) -> a % b
     negate: (a) -> -a
-    equal: (x, y) -> x is y
+
+    eq: (x, y) -> x is y
+    neq: (x, y) -> x isnt y
+    gt: (x, y) -> x > y
+    gte: (x, y) -> x >= y
+    lt: (x, y) -> x < y
+    lte: (x, y) -> x <= y
 
 module.exports = ø

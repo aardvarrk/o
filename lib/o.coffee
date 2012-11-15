@@ -13,6 +13,7 @@
     last: (xs) -> xs[xs.length - 1]
     init: (xs) -> xs[..xs.length - 2]
     null: (xs) -> xs.length is 0
+    elem: (x, xs) -> ø.any(ø.curry(ø.equal, x), xs)
 
     foldl: (f, z0, xs0) ->
         lgo = (z, xs) ->
@@ -66,5 +67,6 @@
     divide: (a, b) -> a / b
     mod: (a, b) -> a % b
     negate: (a) -> -a
+    equal: (x, y) -> x is y
 
 module.exports = ø

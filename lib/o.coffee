@@ -6,6 +6,9 @@
     apply: (f, args...) -> f(args...)
     comp: (f, g) -> (args...) -> f(g(args...))
 
+    unshift: (x, xs) ->
+        # Very verbose because JavaScript's Array constructor is moronic
+        if xs.length is 0 then [x] else new Array(x, xs...)
     head: (xs) -> xs[0]
     tail: (xs) -> xs[1..]
     last: (xs) -> xs[xs.length - 1]
@@ -22,6 +25,7 @@
     foldl1: (f, xs) -> ø.foldl(f, ø.head(xs), ø.tail(xs))
     sum: (xs) -> ø.foldl1(ø.add, xs)
     product: (xs) -> ø.foldl1(ø.multiply, xs)
+    reverse: (xs) -> ø.foldl(ø.flip(ø.unshift), [], xs)
 
     map: (f, xs) -> f(x) for x in xs
     filter: (f, xs) -> x for x in xs when f(x)

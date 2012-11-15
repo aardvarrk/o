@@ -46,5 +46,7 @@
     subtract: (a, b) -> a - b
     multiply: (a, b) -> a * b
     divide: (a, b) -> a / b
+    mod: (a, b) -> a % b
+    negate: (a) -> -a
 
 module.exports = ø

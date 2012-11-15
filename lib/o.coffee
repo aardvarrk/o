@@ -14,6 +14,7 @@
     init: (xs) -> xs[..xs.length - 2]
     null: (xs) -> xs.length is 0
     elem: (x, xs) -> ø.any(ø.curry(ø.equal, x), xs)
+    length: (xs) -> xs.length
 
     foldl: (f, z0, xs0) ->
         lgo = (z, xs) ->

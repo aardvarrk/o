@@ -36,7 +36,7 @@
     succ: (x) -> x + 1
     pred: (x) -> x - 1
     even: (a) -> a % 2 is 0
-    odd: (a) -> a % 2 is 1
+    odd: (a) -> a % 2 isnt 0
 
     and: (a, b) -> a and b
     or: (a, b) -> a or b

@@ -49,7 +49,7 @@
         for x in xs
             return false unless x
         true
-    lor: (xs) -> !ø.null(ø.filter(ø.id, xs))
+    lor: (xs) -> not ø.null(ø.filter(ø.id, xs))
     all: (f, xs) -> ø.comp(ø.land, ø.curry(ø.map, f))(xs)
     any: (f, xs) -> ø.comp(ø.lor, ø.curry(ø.map, f))(xs)
 

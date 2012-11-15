@@ -2,6 +2,9 @@
 *~
 \#*#
 
+# docco crap
+docs
+
 # Node.js crap
 node_modules
 lib-cov

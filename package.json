@@ -1,8 +1,13 @@
 {
     "name": "o-lib",
     "main": "main.js",
+    "keywords": ["functional", "fold", "map"],
     "dependencies": {
         "coffee-script": "1.4.x"
     },
-    "version": "0.1.0"
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/aardvarrk/o.git"
+    },
+    "version": "0.1.1"
 }

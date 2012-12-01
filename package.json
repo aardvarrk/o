@@ -1,13 +1,15 @@
 {
     "name": "o-lib",
-    "main": "main.js",
+    "description": "Functional programming library for JavaScript.",
+    "homepage": "http://aardvarrk.github.com/o/",
     "keywords": ["functional", "fold", "map"],
     "dependencies": {
         "coffee-script": "1.4.x"
     },
+    "main": "main.js",
     "repository": {
         "type": "git",
         "url": "git://github.com/aardvarrk/o.git"
     },
-    "version": "0.1.1"
+    "version": "0.1.2"
 }
